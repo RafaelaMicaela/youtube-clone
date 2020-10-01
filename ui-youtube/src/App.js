@@ -1,10 +1,33 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
+import {ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core';
+
+import Home from './Home';
+
+const useStyles = makeStyles({
+  root: {
+
+  }
+})
 
 function App() {
-  return <Button variant="contained" color="primary">
-  Primary
-</Button>;
+
+  const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: '#f44336',
+      }
+    },
+  });
+  
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Home/>
+
+      
+    </ThemeProvider>
+    
+  ); 
 }
 
 export default App;
